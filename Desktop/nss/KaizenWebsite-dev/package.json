@@ -1,0 +1,30 @@
+{
+    "name": "kaizenwebsite",
+    "version": "1.0.0",
+    "description": "CodeBaseForKaizenWebsite",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "prettier-fix": "npx prettier --write ./*.html ./*/**"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/NSS-IIT-Delhi/KaizenWebsite.git"
+    },
+    "author": "jaskeerat",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/NSS-IIT-Delhi/KaizenWebsite/issues"
+    },
+    "homepage": "https://github.com/NSS-IIT-Delhi/KaizenWebsite#readme",
+    "devDependencies": {
+        "prettier": "^2.2.1"
+    },
+    "prettier": {
+        "filepath": "./index.html",
+        "trailingComma": "es5",
+        "tabWidth": 4,
+        "semi": false,
+        "htmlWhitespaceSensitivity": "css"
+    }
+}
