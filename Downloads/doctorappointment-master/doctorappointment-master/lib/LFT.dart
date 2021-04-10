@@ -125,6 +125,7 @@ class _MyHomePageState extends State<lft> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Color(0xff54D579),
         title: Text("Liver Function Test"),
       ),
       body: Padding(
@@ -236,7 +237,28 @@ class _MyHomePageState extends State<lft> {
 
                     RaisedButton(
                       onPressed: _submit,
-                      child: Text("submit"),
+                      textColor: Colors.white,
+                      padding: const EdgeInsets.all(0.0),
+                      child: Container(
+                        height: 60,
+                        width: MediaQuery.of(context).size.width,
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                            stops: [0, 1],
+                            colors: [getStartedColorStart, getStartedColorEnd],
+                          ),
+                        ),
+                        child: Center(
+                          child: Text(
+                            "Submit",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 20,
+                              fontWeight: FontWeight.w800,
+                            ),
+                          ),
+                        ),
+                      ),
                     ),
                   ],
                 ),
@@ -249,7 +271,14 @@ class _MyHomePageState extends State<lft> {
               ),
               Column(
                 children: <Widget>[
-                  x == '' ? Text('Enter') : Text(x),
+                  Text(
+                    x,
+                    style: TextStyle(
+                      color: Colors.redAccent,
+                      fontSize: 17,
+                      fontWeight: FontWeight.w800,
+                    ),
+                  ),
                 ],
               )
             ],

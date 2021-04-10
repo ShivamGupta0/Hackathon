@@ -126,11 +126,12 @@ class _MyFirstPageState extends State<MyFirstPage> {
                           child: Column(
                             children: <Widget>[
                               createDocWidget1(
-                                  "doc1.png", "Liver Function Test"),
+                                  "Image2.png", "Liver Function Test"),
                               createDocWidget2(
-                                  "doc2.png", "Kidney Function Test"),
-                              createDocWidget3("doc3.png", "Thyroid Test"),
-                              createDocWidget4("doc1.png", "Blood Sugar Test"),
+                                  "Image0.png", "Kidney Function Test"),
+                              createDocWidget3("Image1.png", "Thyroid Test"),
+                              createDocWidget4(
+                                  "Image3.png", "Blood Sugar Test"),
                             ],
                           ),
                         ),
