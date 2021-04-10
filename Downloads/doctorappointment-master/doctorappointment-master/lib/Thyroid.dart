@@ -57,8 +57,8 @@ class _MyHomePageState extends State<thyroid> {
 
   void _submit() async {
     print("hello ttr");
-    final rawCsvContent =
-        await rootBundle.loadString('assets/images/hypothyroid.csv');
+    final rawCsvContent = await rootBundle
+        .loadString('assets/images/pima_indians_diabetes_database.csv');
     final samples = DataFrame.fromRawCsv(rawCsvContent);
     final targetColumnName = 'Outcome';
     final splits = splitData(samples, [0.7]);
@@ -110,6 +110,11 @@ class _MyHomePageState extends State<thyroid> {
     // String x = prediction.rows.toString();
     setState(() {
       x = prediction.rows.toString();
+      if (x == '((1.0))') {
+        x = 'Something is not right, Consult your Doctor';
+      } else {
+        x = 'Everything seems right';
+      }
     });
     print(x);
   }
@@ -143,8 +148,7 @@ class _MyHomePageState extends State<thyroid> {
                     // this is where the
                     // input goes
                     TextFormField(
-                      decoration: InputDecoration(
-                          labelText: 'Diastolic blood pressure'),
+                      decoration: InputDecoration(labelText: 'TSH'),
                       keyboardType: TextInputType.number,
                       textInputAction: TextInputAction.next,
                       onFieldSubmitted: (value) {
@@ -154,7 +158,7 @@ class _MyHomePageState extends State<thyroid> {
                       },
                     ),
                     TextFormField(
-                      decoration: InputDecoration(labelText: 'Insulin'),
+                      decoration: InputDecoration(labelText: 'T3'),
                       keyboardType: TextInputType.number,
                       textInputAction: TextInputAction.next,
                       onFieldSubmitted: (value) {
@@ -164,7 +168,7 @@ class _MyHomePageState extends State<thyroid> {
                       },
                     ),
                     TextFormField(
-                      decoration: InputDecoration(labelText: 'BMI'),
+                      decoration: InputDecoration(labelText: 'T4U'),
                       keyboardType: TextInputType.number,
                       textInputAction: TextInputAction.next,
                       onFieldSubmitted: (value) {
@@ -174,7 +178,7 @@ class _MyHomePageState extends State<thyroid> {
                       },
                     ),
                     TextFormField(
-                      decoration: InputDecoration(labelText: 'Glucose'),
+                      decoration: InputDecoration(labelText: 'TBG'),
                       keyboardType: TextInputType.number,
                       textInputAction: TextInputAction.next,
                       onFieldSubmitted: (value) {
@@ -184,7 +188,7 @@ class _MyHomePageState extends State<thyroid> {
                       },
                     ),
                     TextFormField(
-                      decoration: InputDecoration(labelText: 'Skin Thickness'),
+                      decoration: InputDecoration(labelText: 'Lithium'),
                       keyboardType: TextInputType.number,
                       textInputAction: TextInputAction.next,
                       onFieldSubmitted: (value) {
@@ -194,8 +198,7 @@ class _MyHomePageState extends State<thyroid> {
                       },
                     ),
                     TextFormField(
-                      decoration: InputDecoration(
-                          labelText: 'Diabetes pedigree function'),
+                      decoration: InputDecoration(labelText: 'I131'),
                       keyboardType: TextInputType.number,
                       textInputAction: TextInputAction.next,
                       onFieldSubmitted: (value) {
@@ -205,7 +208,7 @@ class _MyHomePageState extends State<thyroid> {
                       },
                     ),
                     TextFormField(
-                      decoration: InputDecoration(labelText: 'Pregnancies'),
+                      decoration: InputDecoration(labelText: 'FT4'),
                       keyboardType: TextInputType.number,
                       textInputAction: TextInputAction.next,
                       onFieldSubmitted: (value) {
